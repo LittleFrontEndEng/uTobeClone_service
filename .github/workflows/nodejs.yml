@@ -4,10 +4,10 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  # pull_request:
-  #   branches: [ master ]
-  # schedule:
-  #   - cron: '0 2 * * *'
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 2 * * *'
 
 jobs:
   build:
@@ -35,9 +35,6 @@ jobs:
         script: |
           export ACCESSKEYID=$ACCESSKEYID
           export ACCESSKEYSECRET=$ACCESSKEYSECRET
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
           cd /root/uTobe_clone_service
           git pull origin master
           npm install --production

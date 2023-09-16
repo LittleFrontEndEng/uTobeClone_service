@@ -35,7 +35,7 @@ jobs:
         script: |
           export ACCESSKEYID=$ACCESSKEYID
           export ACCESSKEYSECRET=$ACCESSKEYSECRET
-          cd /home/ubuntu/uTobe_clone_service
+          cd /home/ubuntu/uTobe_clone_service/
           git pull origin master
           npm install --production
           npm run stop

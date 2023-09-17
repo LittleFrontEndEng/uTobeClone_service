@@ -38,6 +38,7 @@ class UserController extends Controller {
     });
     // 发送响应
     ctx.body = {
+      status: 200,
       user: {
         email: user.email,
         token,
@@ -72,6 +73,7 @@ class UserController extends Controller {
     });
     // 发送响应数据
     ctx.body = {
+      status: 200,
       user: {
         email: user.email,
         token,
@@ -87,6 +89,7 @@ class UserController extends Controller {
     // const body = ctx.request.body;
     const user = ctx.user;
     ctx.body = {
+      status: 200,
       user: {
         email: user.email,
         token: ctx.headers.authorization,
@@ -131,6 +134,7 @@ class UserController extends Controller {
     const user = await userService.updateUser(body);
     // 返回新数据
     ctx.body = {
+      status: 200,
       user: {
         ...ctx.helper._.pick(user, [
           'username',
@@ -154,6 +158,7 @@ class UserController extends Controller {
     const user = await this.service.user.subscribe(userId, channelId);
     // 发送响应
     ctx.body = {
+      status: 200,
       user: {
         ...ctx.helper._.pick(user, [
           'username',
@@ -180,6 +185,7 @@ class UserController extends Controller {
     const user = await this.service.user.unsubscribe(userId, channelId);
     // 发送响应
     ctx.body = {
+      status: 200,
       user: {
         ...ctx.helper._.pick(user, [
           'username',
@@ -212,6 +218,7 @@ class UserController extends Controller {
     const user = await ctx.model.User.findById(ctx.params.userId);
     // 发送响应
     ctx.body = {
+      status: 200,
       user: {
         ...ctx.helper._.pick(user, [
           'username',

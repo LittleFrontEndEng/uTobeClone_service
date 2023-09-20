@@ -18,3 +18,20 @@ create-egg 项目名称
 #  -model -数据模型文件夹
 # config -应用配置文件夹
 ```
+
+## 添加egg-mongoose
+```js
+  config.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1:27017/utobeclone',
+      options: {
+        // dbName: '',
+        // user: '',
+        // pass: '',
+        // useUnifiedTopology: true,
+      },
+      // mongoose global plugins, expected a function or an array of function and options
+      plugins: [],
+    },
+  };
+```

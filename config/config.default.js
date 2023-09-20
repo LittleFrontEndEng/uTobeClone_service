@@ -29,12 +29,9 @@ module.exports = appInfo => {
     client: {
       url: 'mongodb://127.0.0.1:27017/utobeclone',
       options: {
-        // user: 'lsy',
-        // proxyUsername: 'lsy',
-        // proxyPassword: 'lsy1234!!',
-        // dbName: 'utobeclone',
-        // user: 'lsy',
-        // pass: 'lsy1234!!',
+        // dbName: '',
+        // user: '',
+        // pass: '',
         // useUnifiedTopology: true,
       },
       // mongoose global plugins, expected a function or an array of function and options

@@ -35,3 +35,29 @@ create-egg 项目名称
     },
   };
 ```
+
+## 添加MD5加密
+```js
+const crypto = require('crypto');
+exports.md5 = str => {
+  return crypto.createHash('md5').update(str).digest('hex');
+};
+```
+
+## 添加jwt校验
+```js
+config.jwt = {
+  secret: '6799ee6c-7e03-4c61-aa40-f84c16653f5a',
+  expiresIn: '1d',
+};
+
+const jwt = require('jsonwebtoken');
+
+// 定义token
+return jwt.sign(data, this.app.config.jwt.secret, {
+  expiresIn: this.app.config.jwt.expiresIn,
+});
+
+// 校验 token
+jwt.verify(token, this.app.config.jwt.secret);
+```

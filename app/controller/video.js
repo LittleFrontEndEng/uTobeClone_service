@@ -16,6 +16,7 @@ class VideoController extends Controller {
     const video = await Video.create(body);
     ctx.status = 201;
     ctx.body = {
+      success: true,
       video,
     };
   }
@@ -51,6 +52,7 @@ class VideoController extends Controller {
     }
 
     ctx.body = {
+      success: true,
       video,
     };
   }

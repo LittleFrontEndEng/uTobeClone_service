@@ -38,7 +38,7 @@ class UserController extends Controller {
     });
     // 发送响应
     ctx.body = {
-      status: 200,
+      success: true,
       user: {
         email: user.email,
         token,
